@@ -3,6 +3,7 @@
 /**
  * change_dir - a function to change directory
  * @directory: directory name
+ * @len: length
  * Return: 0 if success otherwise -1
  */
 
