@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * _custom_puts - prints input string
+ * _eputs - prints input string
  * @str: string to be printed
  *
  * Return: Nothing
  */
-void _custom_puts(char *str)
+void _eputs(char *str)
 {
 	int i = 0;
 
@@ -14,19 +14,19 @@ void _custom_puts(char *str)
 		return;
 	while (str[i] != '\0')
 	{
-		_custom_putchar(str[i]);
+		_eputchar(str[i]);
 		i++;
 	}
 }
 
 /**
- * _custom_putchar - writes the character c to stderr
+ * _eputchar - writes character c to stderr
  * @c: character to print
  *
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
-int _custom_putchar(char c)
+int _eputchar(char c)
 {
 	static int i;
 	static char buf[WRITE_BUF_SIZE];
@@ -42,14 +42,14 @@ int _custom_putchar(char c)
 }
 
 /**
- * _putfd_custom - writes character c to given fd
+ * _putfd - writes character c to given fd
  * @c: Character to print
  * @fd: The file descriptor to write to
  *
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
-int_putfd_custom(char c, int fd)
+int _putfd(char c, int fd)
 {
 	static int i;
 	static char buf[WRITE_BUF_SIZE];
@@ -65,13 +65,13 @@ int_putfd_custom(char c, int fd)
 }
 
 /**
- * _putsfd_custom - prints input string
+ * _putsfd - prints input string
  * @str: string to be printed
  * @fd: the file descriptor to write to
  *
  * Return: number of characters put
  */
-int _putsfd_custom(char *str, int fd)
+int _putsfd(char *str, int fd)
 {
 	int i = 0;
 
@@ -79,7 +79,7 @@ int _putsfd_custom(char *str, int fd)
 		return (0);
 	while (*str)
 	{
-		i += _putfd_custom(*str++, fd);
+		i += _putfd(*str++, fd);
 	}
 	return (i);
 }
