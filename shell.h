@@ -175,6 +175,10 @@ int _myhelp(info_t *);
 /* _builtin1.c */
 int _myhistory(info_t *);
 int _myalias(info_t *);
+int print_alias(list_t *node);
+int set_alias(info_t *info, char *str);
+int unset_alias(info_t *info, char *str);
+
 
 /* _history.c */
 char *get_history_file(info_t *info);
