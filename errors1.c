@@ -6,7 +6,7 @@
  * Return: 0 if no numbers in string, converted number otherwise
  *       -1 on error
  */
-int my_erratoi(char *s)
+int _erratoi(char *s)
 {
 	int i = 0;
 	unsigned long int result = 0;
@@ -35,7 +35,7 @@ int my_erratoi(char *s)
  * Return: 0 if no numbers in string, converted number otherwise
  *        -1 on error
  */
-void print_custom_error(info_t *info, char *estr)
+void print_error(info_t *info, char *estr)
 {
 	_eputs(info->fname);
 	_eputs(": ");

@@ -50,12 +50,10 @@ int remove_env_var(info_t *info, char *var)
 }
 
 /**
- * set_env_var - initialize new environment variable,
- *             or modify existing one
- * @info: Contain potential arguments. To maintain
- *        constant function prototype.
+ * set_env_var - initialize new environment var
+ * @info: Contain potential argument
  * @var: string env var property
- * @value: string env var value
+ * @value: string env.
  *  Return: Always 0
  */
 int set_env_var(info_t *info, char *var, char *value)
