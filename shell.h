@@ -73,10 +73,6 @@ typedef struct passinfo
 {
 	char *arg;
 	char **argv;
-	char **cmd_buf;
-	int cmd_buf_type;
-	int readfd;
-	int histcount;
 	char *path;
 	int argc;
 	unsigned int line_count;
@@ -89,6 +85,11 @@ typedef struct passinfo
 	char **environ;
 	int env_changed;
 	int status;
+
+	char **cmd_buf;
+	int cmd_buf_type;
+	int readfd;
+	int histcount;
 } info_t;
 
 #define INFO_INIT \
@@ -102,8 +103,8 @@ typedef struct passinfo
  */
 typedef struct builtin
 {
-	int (*func)(info_t *);
 	char *type;
+	int (*func)(info_t *);
 } builtin_table;
 
 
@@ -174,6 +175,10 @@ int _myhelp(info_t *);
 /* _builtin1.c */
 int _myhistory(info_t *);
 int _myalias(info_t *);
+int print_alias(list_t *node);
+int set_alias(info_t *info, char *str);
+int unset_alias(info_t *info, char *str);
+
 
 /* _history.c */
 char *get_history_file(info_t *info);

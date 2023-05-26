@@ -9,7 +9,7 @@
  */
 list_t *add_node(list_t **head, const char *str, int num)
 {
-	list_t *_head;
+	list_t *n_head;
 
 	if (!head)
 		return (NULL);
@@ -113,7 +113,7 @@ int delete_node_at_index(list_t **head, unsigned int index)
 		free(c_node);
 		return (1);
 	}
-	node = *head;
+	c_node = *head;
 	while (c_node)
 	{
 		if (i == index)
