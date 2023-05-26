@@ -128,7 +128,7 @@ int _getline(info_t *info, char **ptr, size_t *length)
 	if (i == len)
 		i = len = 0;
 
-	r = read_buf(info, buf, &len);
+	r = read_buffer(info, buf, &len);
 	if (r == -1 || (r == 0 && len == 0))
 		return (-1);
 
@@ -158,7 +158,7 @@ int _getline(info_t *info, char **ptr, size_t *length)
  * @sig_num: signal number
  * Return: void
  */
-void sigintHandler(attribute((unused))int sig_num)
+void sigintHandler(__attribute__((unused))int sig_num)
 {
 	_puts("\n");
 	_puts("$ ");
