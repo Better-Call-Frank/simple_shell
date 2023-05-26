@@ -31,7 +31,6 @@ void ffree(char **pp)
 		return;
 	while (*pp)
 		free(*pp++);
-		free(*pp++);
 	free(str);
 }
 

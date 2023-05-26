@@ -53,6 +53,7 @@ int hsh(info_t *info, char **av)
 int find_builtin(info_t *info)
 {
 	int i = 0, built_in_ret = -1;
+
 	builtin_table builtintbl[] = {
 		{"exit", _myexit},
 		{"env", _myenv},
@@ -65,8 +66,7 @@ int find_builtin(info_t *info)
 		{NULL, NULL}
 	};
 
-	while (builtintbl[i].type)
-		i++;
+	for (i = 0; builtintbl[i].type; i++)
 		if (_strcmp(info->argv[0], builtintbl[i].type) == 0)
 		{
 			info->line_count++;

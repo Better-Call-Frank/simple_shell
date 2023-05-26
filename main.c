@@ -38,7 +38,7 @@ int main(int argc, char **argv)
 	}
 	populate_env_list(info);
 	read_history(info);
-	hsh(info, av);
+	hsh(info, argv);
 	return (EXIT_SUCCESS);
 }
 
