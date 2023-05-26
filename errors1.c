@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * my_erratoi - converts string to integer
+ * _erratoi - a function that converts string to integer
  * @s: string to be converted
  * Return: 0 if no numbers in string, converted number otherwise
  *       -1 on error
@@ -29,7 +29,7 @@ int _erratoi(char *s)
 }
 
 /**
- * print_custom_error - prints error message
+ * print_error - prints error message
  * @info: parameter & return info struct
  * @estr: string containing specified error type
  * Return: 0 if no numbers in string, converted number otherwise
