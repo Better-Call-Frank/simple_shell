@@ -27,11 +27,10 @@ int is_cmd(info_t *info, char *path)
  */
 char *dup_chars(char *pathstr, int start, int stop)
 {
-	int size = 1024;
-	static char buffer[size];
+	static char buffer[1024];
 	int i = 0, j = 0;
 
-	for (k = 0, i = start; i < stop; i++)
+	for (i = 0, i = start; i < stop; i++)
 		if (pathstr[i] != ':')
 			buffer[j++] = pathstr[i];
 	buffer[j] = 0;
@@ -62,7 +61,7 @@ char *find_path(info_t *info, char *pathstr, char *cmd)
 		if (!pathstr[i] || pathstr[i] == ':')
 		{
 			mypath = dup_chars(pathstr, c_pos, i);
-			if (!*path)
+			if (!*mypath)
 				_strcat(mypath, cmd);
 			else
 			{
