@@ -18,13 +18,13 @@ char **get_environ(info_t *info)
 }
 
 /**
- * unset_env - Remove an environment variable
+ * _unsetenv - Remove an environment variable
  * @info: Contain potential arguments. Used to maintain
  *        constant function prototype.
  *  Return: 1 on delete, 0 otherwise
  * @var: string env var property
  */
-int unset_env(info_t *info, char *var)
+int _unsetenv(info_t *info, char *var)
 {
 	list_t *node = info->env;
 	size_t i = 0;
@@ -50,13 +50,13 @@ int unset_env(info_t *info, char *var)
 }
 
 /**
- * set_env - initialize new environment var
+ * _setenv - initialize new environment var
  * @info: Contain potential argument
  * @var: string env var property
  * @value: string env.
  *  Return: Always 0
  */
-int set_env(info_t *info, char *var, char *value)
+int _setenv(info_t *info, char *var, char *value)
 {
 	char *buf = NULL;
 	list_t *node;
