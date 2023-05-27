@@ -36,8 +36,8 @@ void set_info(info_t *info, char **av)
 				info->argv[1] = NULL;
 			}
 		}
-		while (info->argv && info->argv[i])
-			i++;
+		for (i = 0; info->argv && info->argv[i]; i++)
+			;
 		info->argc = i;
 
 		replace_alias(info);
@@ -53,9 +53,9 @@ void set_info(info_t *info, char **av)
  */
 void free_info(info_t *info, int all)
 {
+	ffree(info->argv);
 	info->argv = NULL;
 	info->path = NULL;
-	ffree(info->argv);
 	if (all)
 	{
 		if (!info->cmd_buf)
@@ -67,7 +67,7 @@ void free_info(info_t *info, int all)
 		if (info->alias)
 			free_list(&(info->alias));
 		ffree(info->environ);
-			info->environ = NULL;
+		info->environ = NULL;
 		bfree((void **)info->cmd_buf);
 		if (info->readfd > 2)
 			close(info->readfd);
