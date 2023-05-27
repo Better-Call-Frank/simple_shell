@@ -33,6 +33,7 @@ int hsh(info_t *info, char **av)
 	free_info(info, 1);
 	if (!interactive(info) && info->status)
 		exit(info->status);
+
 	if (builtin_ret == -2)
 	{
 		if (info->err_num == -1)
@@ -115,7 +116,7 @@ void find_cmd(info_t *info)
 		else if (*(info->arg) != '\n')
 		{
 			info->status = 127;
-			print_error(info, "not found\n");
+			print_error(info, "NOT FOUND\n");
 		}
 	}
 }

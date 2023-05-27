@@ -17,8 +17,10 @@ char **strtow(char *str, char *d)
 	if (!d)
 		d = " ";
 	for (i = 0; str[i] != '\0'; i++)
+	{
 		if (!is_delim(str[i], d) && (is_delim(str[i + 1], d) || !str[i + 1]))
 			word_count++;
+	}
 
 	if (word_count == 0)
 		return (NULL);
@@ -62,9 +64,11 @@ char **strtow2(char *str, char d)
 	if (str == NULL || str[0] == 0)
 		return (NULL);
 	for (i = 0; str[i] != '\0'; i++)
+	{
 		if ((str[i] != d && str[i + 1] == d) ||
 				    (str[i] != d && !str[i + 1]) || str[i + 1] == d)
 			word_count++;
+	}
 	if (word_count == 0)
 		return (NULL);
 	s = malloc((1 + word_count) * sizeof(char *));

@@ -1,16 +1,16 @@
 #include "shell.h"
 
 /**
- * clear_info - initializes info_t struct
+ * clear_info - a function that initializes info_t struct
  * @info: info struct
  * Return: void
  */
 void clear_info(info_t *info)
 {
-	info->path = NULL;
-	info->argc = 0;
 	info->arg = NULL;
 	info->argv = NULL;
+	info->path = NULL;
+	info->argc = 0;
 }
 
 /**
